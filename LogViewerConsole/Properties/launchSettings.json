@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LogViewerConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "file=\"C:\\temp\\whitesourcetest.log\" config=\"C:\\temp\\logparser.config\" "
+    }
+  }
+}
