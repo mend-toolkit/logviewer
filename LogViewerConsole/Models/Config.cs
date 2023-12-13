@@ -24,7 +24,7 @@ namespace LogViewerConsole.Models
 
                 if (!File.Exists(filename))
                 {
-                    GetConfigFromWebclient("https://raw.githubusercontent.com/mend-toolkit/LogParser/main/LogParser.config");
+                    GetConfigFromWebclient("https://raw.githubusercontent.com/mend-toolkit/logviewer/main/LogParser.config");
                     Console.WriteLine("Configuration file source - Github");
                     return;
                 }
