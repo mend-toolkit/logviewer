@@ -8,7 +8,7 @@ namespace LogViewerConsole
 {
     public class LogViewerConsole
     {
-        readonly string Version = "1.0.0.0";
+        readonly string Version = "1.0.0.1";
         string outputLog = string.Empty;
         string logFile = string.Empty;
         string useConfig = string.Empty;    
@@ -126,18 +126,16 @@ namespace LogViewerConsole
                         if (param[0].ToLower().Replace("-","").Trim() == "help")
                         {
                             ShowHelp();
+                            return;
                         }
                     
-                        if (args.Length == 1)
+                        if (File.Exists(param[0]) && !param[0].Contains(".dll") && !param[0].Contains(".exe"))
                         {
-                            if (File.Exists(param[0]) && !param[0].Contains(".dll") && !param[0].Contains(".exe"))
+                            logFile = param[0];
+                            Console.WriteLine("file: " + logFile);
+                            if (config == null)
                             {
-                                logFile = param[0];
-                                Console.WriteLine("file: " + logFile);
-                                if (config == null)
-                                {
-                                    config = new Config("LogParser.config");
-                                }
+                                config = new Config("LogParser.config");
                             }
                         }
                     }
