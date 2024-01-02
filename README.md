@@ -10,6 +10,11 @@ No actual installation is needed, just copy the binary from the release.  For Ma
 * chmod +x lvc_linux
 * chmod +x lvc_osx
 
+The following command will download the latest version and for both the Mac and Linux make it executable
+curl -LJO https://github.com/mend-toolkit/logviewer/releases/latest/download/lvc_osx && chmod +x lvc_osx
+curl -LJO https://github.com/mend-toolkit/logviewer/releases/latest/download/lvc_linux && chmod +x lvc_linux
+curl -LJO https://github.com/mend-toolkit/logviewer/releases/latest/download/lvc_x64.exe
+
 You should consider renaming the file to lvc to make it easier.
 
 # Usage Example
