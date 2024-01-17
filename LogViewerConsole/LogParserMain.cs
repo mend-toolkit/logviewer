@@ -8,7 +8,7 @@ namespace LogViewerConsole
 {
     public class LogViewerConsole
     {
-        readonly string Version = "1.0.0.1";
+        readonly string Version = "1.0.0.2";
         string outputLog = string.Empty;
         string logFile = string.Empty;
         string useConfig = string.Empty;    
