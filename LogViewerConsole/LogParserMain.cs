@@ -537,6 +537,20 @@ namespace LogViewerConsole
                     lstTempFilter.Add(tempFilter);
                     indexAbove = FindLine(lines, lstTempFilter, index, false);
 
+                    if (indexAbove < 0)
+                    {
+                        Console.WriteLine("NOTICE: " + searchItem.name + " textfind had an index < 0, this means that it could not find the top value.  Setting value to 0 - top of file.");
+
+                        indexAbove = 0;
+                        if (index - indexAbove > 100)
+                        {
+                            //Too many lines, probably not a good find.
+                            Console.WriteLine("NOTICE: " + searchItem.name + " textfind had an index < 0 and the difference between current line: " + index.ToString() + " and 0 are greater than 100.  Ignoring!");
+                            return;
+                        }
+                    }
+
+
                     lstTempFilter.Clear();
                     tempFilter.find = filter.findDown;
                     lstTempFilter.Add(tempFilter);
